@@ -1,0 +1,19 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/And4Way.hdl
+
+/**
+ * 8-way And: 
+ * out = (in[0] And in[1] And ... And in[7])
+ */
+
+CHIP And4Way {
+    IN a,b,c,d;
+    OUT out;
+
+    PARTS:
+	    And(a=a, b=b,  out=fatb);
+	    And(a=fatb, b=c,  out=fatc);
+	    And(a=fatc, b=d,  out=out);
+}

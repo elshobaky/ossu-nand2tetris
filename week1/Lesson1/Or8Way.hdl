@@ -1,0 +1,23 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Or8Way.hdl
+
+/**
+ * 8-way Or: 
+ * out = (in[0] or in[1] or ... or in[7])
+ */
+
+CHIP Or8Way {
+    IN in[8];
+    OUT out;
+
+    PARTS:
+	    Or(a=in[0], b=in[1],  out=f0t1);
+	    Or(a=f0t1, b=in[2],  out=f0t2);
+	    Or(a=f0t2, b=in[3],  out=f0t3);
+	    Or(a=f0t3, b=in[4],  out=f0t4);
+	    Or(a=f0t4, b=in[5],  out=f0t5);
+	    Or(a=f0t5, b=in[6],  out=f0t6);
+	    Or(a=f0t6, b=in[7],  out=out);
+}
